@@ -89,6 +89,8 @@ always @(posedge clk or negedge rst) begin
   end
 end
 전체 코드는 /src/ 디렉토리에 포함합니다.
+```
+
 
 
 🧪 Simulation 결과
