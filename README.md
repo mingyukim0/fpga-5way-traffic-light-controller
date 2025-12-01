@@ -158,4 +158,5 @@ FPGA 보드와 브레드보드 LED를 직접 연결하고 검증하는 과정에
 
 교육기관: AMD Korea · 리버트론 · 서일대학교
 
-수료증 이미지는 /certificate/amd_certificate.png 에 추가합니다.
+<img width="756" height="673" alt="image" src="https://github.com/user-attachments/assets/1da0d5a3-3997-464b-96ee-2233bd3998ea" />
+
