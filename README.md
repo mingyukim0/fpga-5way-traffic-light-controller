@@ -60,12 +60,18 @@ Vivado/Active-HDL 시뮬레이션, Clock Divider 설계, Testbench 기반 디버
 
 ---
 
-# 💻 Verilog HDL 주요 코드
+# 💻 Verilog HDL 코드
+
+본 프로젝트의 전체 Verilog 코드는 `/src` 디렉토리에 포함됩니다:
+
+- [`traffic.v`](./src/traffic.v)
+- [`top_module.v`](./src/top_module.v)
+- [`clock_divider.v`](./src/clock_divider.v)
+- [`testbench.v`](./src/testbench.v)
+
+아래는 FSM 상태 전환을 보여주는 핵심 코드 일부입니다:
 
 ```verilog
-parameter YYY=3'b000, GRR=3'b001, YRR=3'b010, RGR=3'b011,
-         RYR=3'b100, RRG=3'b101, RRY=3'b110;
-
 always @(posedge clk or negedge rst) begin
   if (!rst) begin
     state <= YYY;
@@ -81,7 +87,10 @@ always @(posedge clk or negedge rst) begin
     endcase
   end
 end
-전체 코드는 /src 디렉토리에 포함합니다.
+```
+
+전체 코드는 `/src` 폴더에서 확인할 수 있습니다.
+```
 
 ---
 
