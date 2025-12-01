@@ -21,7 +21,7 @@ Vivado/Active-HDL 시뮬레이션, Clock Divider 설계, Testbench 기반 디버
 
 - 5차로 신호 흐름 분석 및 그룹화 설계  
 - FSM(상태도) 기반 신호 제어 로직 구현  
-- Verilog HDL 기반 탑 모듈/서브 모듈 설계  
+- Verilog HDL 기반 모듈 설계  
 - Clock Divider 및 타이밍 제어  
 - Vivado/Active-HDL Simulation 수행  
 - FPGA + 브레드보드 LED 회로 구현  
@@ -30,14 +30,14 @@ Vivado/Active-HDL 시뮬레이션, Clock Divider 설계, Testbench 기반 디버
 
 # 🛣 5차로 교차로 설계 난이도
 
-일반적인 2-Way 또는 4-Way 신호등보다 훨씬 복잡한 이유는 다음과 같습니다:
+일반 신호등 예제보다 훨씬 복잡한 이유는 다음과 같습니다:
 
 ### 🔹 1) 도로 수 증가 → 상태 폭증  
 직진/우회전 포함 시 상태가 기하급수적으로 증가함
 
 ### 🔹 2) 특정 도로는 세트로 제어해야 함  
-- 1·4번 도로 한 그룹  
-- 2·5번 도로 한 그룹  
+- 1·4번 도로 그룹  
+- 2·5번 도로 그룹  
 - 3번 도로는 독립 직진 전용
 
 ### 🔹 3) 우회전 경로가 복잡  
@@ -56,7 +56,7 @@ Vivado/Active-HDL 시뮬레이션, Clock Divider 설계, Testbench 기반 디버
 
 **YYY → GRR → YRR → RGR → RYR → RRG → RRY → GRR 반복**
 
-상태도 이미지는 `/docs/fsm_diagram.png` 에 추가하면 됩니다.
+상태도 이미지는 `/docs/fsm_diagram.png` 에 추가합니다.
 
 ---
 
@@ -87,7 +87,7 @@ end
 Vivado/Active-HDL 시뮬레이션을 통해
 각 상태가 타이밍에 맞게 정확히 전환되는 것을 확인했습니다.
 
-이미지 파일은 /docs/simulation_waveform.png 에 추가합니다.
+Waveform 이미지는 /docs/simulation_waveform.png 에 추가합니다.
 
 🔌 핀 구성(Pin Mapping)
 PMOD JA 포트를 기반으로 신호등 LED를 매핑했습니다.
@@ -103,7 +103,7 @@ FPGA 보드의 출력 신호를 브레드보드 LED 회로로 연결해
 ⭐ 배운 점 (문제 → 해결 → 성장)
 🔹 1) 상태 폭증 문제 → 도로 그룹화 설계로 해결
 복잡도가 높아 충돌이 발생했으나
-1·4 / 2·5 / 3번 도로 그룹으로 재구성하여 해결.
+1·4 / 2·5 / 3번 도로 그룹으로 재구성하여 문제 해결.
 
 🔹 2) Yellow 타이밍 오류 → Clock Divider/Counter 재설계
 상태별 OnTime을 분리하고 TimeCnt 초기화 로직을 도입해
@@ -113,19 +113,18 @@ FPGA 보드의 출력 신호를 브레드보드 LED 회로로 연결해
 상태가 반복되는 오류를 reset 길이 조정 및 counter 동작 수정으로 해결.
 
 🔹 4) LED 점등 오류 → 핀 매핑 재확인
-FPGA 실제 핀과 LED 위치 불일치 문제를
-pinmap 문서 기반으로 재배선하여 해결.
+FPGA 실제 핀과 LED 위치 불일치 문제를 pinmap 문서 기반으로 재배선하여 해결.
 
 🎯 최종적으로 배운 핵심 역량
 복잡한 실물 시스템을 FSM으로 추상화하는 능력
 
-Verilog 기반 디지털 회로 설계/디버깅 능력
+Verilog 기반 디지털 회로 설계 및 디버깅 능력
 
-Simulation 기반 문제 분석 능력
+Simulation 기반 원인 분석 및 문제 해결 능력
 
 FPGA–브레드보드 연동 하드웨어 구현 능력
 
-모듈 설계, 분주회로 설계 등 실전 임베디드 경험
+모듈 설계, 분주회로 설계 등 임베디드 실전 경험
 
 🎖 관련 교육 수료증
 과정명: Vivado를 활용한 AMD 응용회로설계 프로젝트
@@ -134,4 +133,4 @@ FPGA–브레드보드 연동 하드웨어 구현 능력
 
 교육기관: AMD Korea · 리버트론 · 서일대학교
 
-이미지는 /certificate/amd_certificate.png 에 추가합니다.
+수료증 이미지는 /certificate/amd_certificate.png 에 추가합니다.
