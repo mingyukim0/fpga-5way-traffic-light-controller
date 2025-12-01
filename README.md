@@ -90,6 +90,7 @@ always @(posedge clk or negedge rst) begin
 end
 전체 코드는 /src/ 디렉토리에 포함합니다.
 
+
 🧪 Simulation 결과
 Vivado/Active-HDL 시뮬레이션을 통해
 각 상태가 타이밍에 맞게 정확히 전환되는 것을 확인했습니다.
