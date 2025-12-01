@@ -16,6 +16,8 @@ Vivado/Active-HDL 시뮬레이션, Clock Divider 설계, Testbench 기반 디버
 일반적인 2차로 또는 4차로가 아닌,  
 **5개의 도로가 만나는 실제 오거리(5-Way Intersection)** 를 제어하기 위한  
 신호등 FSM을 Verilog HDL로 설계하고 FPGA로 구현하였습니다.
+<img width="644" height="248" alt="image" src="https://github.com/user-attachments/assets/7d5d82ee-3891-41ec-934a-fe1f6fa0dddd" />
+
 
 프로젝트 핵심 요소는 다음과 같습니다:
 
@@ -56,7 +58,8 @@ Vivado/Active-HDL 시뮬레이션, Clock Divider 설계, Testbench 기반 디버
 
 **YYY → GRR → YRR → RGR → RYR → RRG → RRY → GRR 반복**
 
-상태도 이미지는 `/docs/fsm_diagram.png` 에 추가합니다.
+<img width="562" height="264" alt="image" src="https://github.com/user-attachments/assets/17c23952-4c39-4ae1-9393-1a880798ae20" />
+
 
 ---
 
@@ -97,7 +100,8 @@ end
 Vivado/Active-HDL 시뮬레이션을 통해
 각 상태가 타이밍에 맞게 정확히 전환되는 것을 확인했습니다.
 
-Waveform 이미지는 /docs/simulation_waveform.png 에 추가합니다.
+<img width="570" height="261" alt="image" src="https://github.com/user-attachments/assets/7f46ee29-a361-4815-98fc-73e997aa95eb" />
+
 
 ---
 
@@ -113,7 +117,8 @@ PMOD JA 포트를 기반으로 신호등 LED를 매핑했습니다.
 FPGA 보드의 출력 신호를 브레드보드 LED 회로로 연결해
 신호등 패턴이 정상적으로 작동하는 것을 검증했습니다.
 
-하드웨어 사진은 /docs/hardware_photo.png 에 추가합니다.
+<img width="585" height="405" alt="image" src="https://github.com/user-attachments/assets/414815c1-6271-40b0-adb8-63f35d2deea1" />
+
 
 ---
 
@@ -135,15 +140,14 @@ FPGA 실제 핀과 LED 위치 불일치 문제를 pinmap 문서 기반으로 재
 ---
 
 # 🎯 최종적으로 배운 핵심 역량
-복잡한 실물 시스템을 FSM으로 추상화하는 능력
 
-Verilog 기반 디지털 회로 설계 및 디버깅 능력
-
-Simulation 기반 원인 분석 및 문제 해결 능력
-
-FPGA–브레드보드 연동 하드웨어 구현 능력
-
-모듈 설계, 분주회로 설계 등 임베디드 실전 경험
+본 프로젝트를 통해 복잡한 실세계 시스템을 구조화하여 설계하는 능력을 키웠으며,
+여러 도로의 흐름을 고려한 FSM 추상화 과정에서 문제 분해와 논리적 모델링 역량을 크게 향상시켰습니다.
+또한 Verilog 기반의 디지털 회로 설계와 타이밍 제어, 시뮬레이션 분석 등을 수행하면서
+회로 동작을 정밀하게 검증하고 오류를 추적·해결하는 디버깅 능력을 체득했습니다.
+FPGA 보드와 브레드보드 LED를 직접 연결하고 검증하는 과정에서는
+하드웨어 구현 특유의 제약을 이해하며 설계–시뮬레이션–실물 구현까지 이어지는 전체 흐름을 경험할 수 있었습니다.
+이 모든 과정을 통해 복잡한 문제를 단계적으로 해결하는 엔지니어링 사고력과 임베디드 시스템 설계 역량을 확실히 강화했습니다.
 
 ---
 
